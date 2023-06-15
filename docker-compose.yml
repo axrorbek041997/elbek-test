@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    container_name: test_pg_container
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
+      POSTGRES_DB: ${DB_NAME:-postgres}
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "${DB_PORT}:5432"
+    restart: unless-stopped
+
+volumes:
+  postgres:

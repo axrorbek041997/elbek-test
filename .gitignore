@@ -1,0 +1,11 @@
+.idea
+venv
+media/
+static/
+__pycache__
+
+.env
+
+*.sqlite3
+*.db
+*.db3
